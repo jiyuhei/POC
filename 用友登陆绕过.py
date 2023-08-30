@@ -33,7 +33,7 @@ def check_vulnerability(url):
         if login_request.status_code == 200 and login_request.json().get('login') == 'false':
             with lock:
                 vulnerable_assets.append(url)
-                print(colored(f"在 {url} 发现漏洞", "red"))
+                print(colored(f"在 {url} 存在漏洞", "red"))
         else:
             with lock:
                 print(f"{url} 未发现漏洞")
